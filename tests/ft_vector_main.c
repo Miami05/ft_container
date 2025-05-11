@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:45:27 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/10 22:51:06 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/11 01:53:52 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,13 @@ int	main(void)
 	i = 0;
 	while (i < 5)
 	{
-		value = (int)i;
+		value = (float)i;
 		ft_vector_push_back(vec, &value);
 		i++;
 	}
 	value = 10;
 	vec = ft_vector_push_back(vec, &value);
 	i = 0;
-	while (i < vec->size)
-	{
-		memcpy(&value,
-			(char *)vec->data + (i * vec->element_size), vec->element_size);
-		printf("%d ", value);
-		i++;
-	}
 	ft_vector_destroy(vec);
 	free(vec);
 	printf("\n");

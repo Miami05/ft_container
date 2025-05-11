@@ -6,12 +6,36 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 20:49:06 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/10 22:08:15 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/11 01:51:05 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_vector.h"
-#include <stdio.h>
+
+t_vector_two_d	*ft_vector_two_d_push_back(t_vector_two_d *vec,
+	t_vector *new_row)
+{
+	t_vector		**new_data;
+	size_t			new_capacity;
+
+	if (!vec || !new_row)
+		return (NULL);
+	new_capacity = vec->row + 1;
+	if (new_capacity > vec->row)
+	{
+		if (vec->row == 0)
+			new_capacity = 1;
+		else
+			new_capacity = vec->row * 2;
+		new_data = realloc(vec->data, new_capacity * 2 * sizeof(t_vector *));
+		if (!new_data)
+			return (NULL);
+		vec->data = new_data;
+	}
+	vec->data[vec->row] = new_row;
+	vec->row++;
+	return (vec);
+}
 
 t_vector	*ft_vector_push_back(t_vector *vec, void *elements)
 {
