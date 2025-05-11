@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:33:10 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/10 19:29:55 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/11 21:38:23 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,14 @@ t_vector_two_d	*ft_vector_create_two_d(size_t column, size_t row)
 	t_vector_two_d	*grid;
 	size_t			i;
 
-	if (row == 0 || column == 0)
+	if (row == 0)
 		return (NULL);
 	grid = (t_vector_two_d *)malloc(sizeof(t_vector_two_d));
 	if (!grid)
 		return (NULL);
 	grid->row = row;
 	grid->column = column;
+	grid->capacity = row;
 	grid->data = (t_vector **)malloc(row * sizeof(t_vector *));
 	if (!grid->data)
 		return (free(grid), NULL);

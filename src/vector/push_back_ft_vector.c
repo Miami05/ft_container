@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 20:49:06 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/11 01:51:05 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/11 16:22:32 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ t_vector_two_d	*ft_vector_two_d_push_back(t_vector_two_d *vec,
 
 	if (!vec || !new_row)
 		return (NULL);
-	new_capacity = vec->row + 1;
-	if (new_capacity > vec->row)
+	if (vec->row >= vec->capacity)
 	{
 		if (vec->row == 0)
 			new_capacity = 1;
 		else
-			new_capacity = vec->row * 2;
+			new_capacity = vec->capacity * 2;
 		new_data = realloc(vec->data, new_capacity * 2 * sizeof(t_vector *));
 		if (!new_data)
 			return (NULL);
 		vec->data = new_data;
+		vec->capacity = new_capacity;
 	}
 	vec->data[vec->row] = new_row;
 	vec->row++;

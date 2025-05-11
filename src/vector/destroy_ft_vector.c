@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 18:31:11 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/10 21:57:11 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/11 17:31:07 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_vector_destroy(t_vector *vec)
 {
+	if (!vec)
+		return ;
 	if (vec->data)
 	{
 		free(vec->data);
@@ -27,6 +29,8 @@ void	ft_vector_destroy_two_d(t_vector_two_d *vec)
 {
 	size_t		i;
 
+	if (!vec || !vec->data)
+		return ;
 	if (vec->data)
 	{
 		i = 0;

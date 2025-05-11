@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_main.c                                   :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 17:45:27 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/11 21:47:48 by ldurmish         ###   ########.fr       */
+/*   Created: 2025/05/11 15:42:09 by ldurmish          #+#    #+#             */
+/*   Updated: 2025/05/11 17:31:53 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_vector.h"
+#include "../../include/ft_vector.h"
 #include <stdio.h>
 
-int	main(void)
+void	print_error(t_vector_two_d *vec_2d, t_vector *vec, char *mssg)
 {
-	t_vector			*vec;
-	size_t				i;
-	int					value[] = {10, 20, 30, 40, 22};
-
-	vec = ft_vector_create(sizeof(int));
-	if (!vec)
-	{
-		printf("Create vector failed\n");
-		return (1);
-	}
-	printf("Pushing elements to vector...\n");
-	i = 0;
-	while (i < sizeof(value) / sizeof(value[0]))
-	{
-		ft_vector_push_back(vec, (int *)value + i);
-		i++;
-	}
+	printf("%s\n", mssg);
 	ft_vector_destroy(vec);
-	free(vec);
-	printf("\n");
+	ft_vector_destroy_two_d(vec_2d);
+	return ;
 }
