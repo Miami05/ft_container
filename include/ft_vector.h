@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 16:38:46 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/12 21:21:21 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:40:42 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_vector		*ft_vector_push_back(t_vector *vec, void *elements);
 void			pop_back(t_vector *vec);
 void			*ft_vector_get(t_vector *vec, size_t index);
 void			ft_vector_set(t_vector *vec, size_t index, void *elements);
+size_t			ft_vector_size(t_vector *vec);
 
 // 2D array functions
 t_vector_two_d	*ft_vector_create_two_d(size_t column, size_t row);
@@ -52,6 +53,7 @@ void			*ft_vector_two_d_get(t_vector_two_d *vec, size_t row_index,
 					size_t col_index);
 void			ft_vector_set_two_d(t_vector_two_d *vec, size_t row,
 					size_t col, void *elements);
+size_t			ft_vector_size_two_d(t_vector_two_d *vec);
 
 // Utils for vectors
 void			print_error(t_vector_two_d *vec_2d, t_vector *vec, char *mssg);

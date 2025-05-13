@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 18:45:13 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/11 20:53:59 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:24:30 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	pop_back_two_d(t_vector_two_d *vec)
 
 	if (vec == NULL || vec->row == 0)
 	{
-		write(2, "Cannot pop the row. The row is empty\n", 39);
+		write(2, "Cannot pop the row. The row is empty\n", 38);
 		return ;
 	}
 	last_index = vec->row - 1;
@@ -37,7 +37,7 @@ void	pop_back(t_vector *vec)
 		vec->size--;
 	else
 	{
-		write(2, "Vector is NULL cannot pop\n", 28);
+		write(2, "Vector is NULL cannot pop\n", 27);
 		return ;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 16:32:25 by ldurmish          #+#    #+#              #
-#    Updated: 2025/05/12 20:21:56 by ldurmish         ###   ########.fr        #
+#    Updated: 2025/05/13 13:32:12 by ldurmish         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ RED = \033[31m
 # Source files for ft_container
 SRCS = $(VECTOR)init_ft_vector.c $(VECTOR)destroy_ft_vector.c $(VECTOR)push_back_ft_vector.c \
 	   $(VECTOR)utils.c $(VECTOR)pop_ft_vector.c $(VECTOR)ft_vector_get.c \
-	   $(VECTOR)ft_vector_set.c\
+	   $(VECTOR)ft_vector_set.c $(VECTOR)size_ft_vector.c\
 
 
 MAIN_SRCS = tests/ft_vector_main.c

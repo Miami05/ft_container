@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:53:26 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/12 16:50:57 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:24:48 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*ft_vector_get(t_vector *vec, size_t index)
 
 	if (!vec || index >= vec->size)
 	{
-		write(2, "Index should be in the size bounds\n", 37);
+		write(2, "Index should be in the size bounds\n", 36);
 		return (NULL);
 	}
 	base = (char *)vec->data;
