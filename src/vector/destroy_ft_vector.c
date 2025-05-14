@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 18:31:11 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/11 17:31:07 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/14 12:57:51 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,43 @@ void	ft_vector_destroy_two_d(t_vector_two_d *vec)
 	}
 	vec->row = 0;
 	vec->column = 0;
+}
+
+void	del(void *ptr)
+{
+	free(ptr);
+}
+
+void	ft_vector_clear(t_vector *vec, void (*del)(void *))
+{
+	size_t		i;
+	void		**ptr_array;
+
+	if (!vec || !vec->data)
+		return ;
+	i = 0;
+	ptr_array = (void **)vec->data;
+	while (i < vec->size)
+	{
+		if (ptr_array && del)
+			del(ptr_array[i]);
+		i++;
+	}
+	vec->size = 0;
+}
+
+void	ft_vector_clear_two_d(t_vector_two_d *vec, void (*del)(void *))
+{
+	size_t		i;
+
+	if (!vec || !vec->data)
+		return ;
+	i = 0;
+	while (i < vec->row)
+	{
+		if (vec->data[i])
+			ft_vector_clear(vec->data[i], del);
+		i++;
+	}
+	vec->row = 0;
 }
