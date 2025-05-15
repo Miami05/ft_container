@@ -6,7 +6,7 @@
 #    By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 16:32:25 by ldurmish          #+#    #+#              #
-#    Updated: 2025/05/13 19:35:35 by ldurmish         ###   ########.fr        #
+#    Updated: 2025/05/15 14:36:23 by ldurmish         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ INCLUDE = -I include/
 # Directories
 SRC = src/
 VECTOR = $(SRC)vector/
+LINKED_LISTS = $(SRC)linked_lists/
 
 # Color codes
 RESET = \033[0m
@@ -31,9 +32,10 @@ RED = \033[31m
 SRCS = $(VECTOR)init_ft_vector.c $(VECTOR)destroy_ft_vector.c $(VECTOR)push_back_ft_vector.c \
 	   $(VECTOR)utils.c $(VECTOR)pop_ft_vector.c $(VECTOR)ft_vector_get.c \
 	   $(VECTOR)ft_vector_set.c $(VECTOR)size_ft_vector.c $(VECTOR)ft_vector_capacity.c\
+	   $(LINKED_LISTS)ft_list_create.c $(LINKED_LISTS)ft_list_push_front.c $(LINKED_LISTS)ft_list_push_back.c\
+	   $(LINKED_LISTS)ft_list_pop.c\
 
-
-MAIN_SRCS = tests/ft_vector_main.c
+MAIN_SRCS = tests/linked_lists_main.c
 
 # Object files
 OBJ = $(SRCS:.c=.o)
