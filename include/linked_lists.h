@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:40:14 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/15 14:34:50 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/16 18:29:43 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,16 @@ void	ft_list_push_front(t_list **head, void *data);
 void	ft_list_push_back(t_list **head, void *data);
 void	ft_list_pop_front(t_list **head);
 void	ft_list_pop_back(t_list **head);
+void	*ft_list_get(t_list **head, size_t index);
+void	ft_list_remove(t_list **head, size_t index);
 
 // Doubly linked list
 void	append_double_linked_list(t_double_list **head, void *data);
 void	ft_double_linked_list_push_front(t_double_list **head, void *data);
 void	ft_double_linked_list_push_back(t_double_list **head, void *data);
+void	ft_double_list_pop_front(t_double_list **head);
+void	ft_double_list_pop_back(t_double_list **head);
+void	*ft_double_list_get(t_double_list **head, size_t index);
+void	ft_double_linked_list_remove(t_double_list **head, size_t index);
 
 #endif

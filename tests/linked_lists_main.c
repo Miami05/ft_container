@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:52:51 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/15 14:35:46 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/16 18:18:51 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 int	main(void)
 {
-	t_list	*head;
-	char	str[]="hello";
-	char	str1[] = "world";
-	char	str2[] = "I am ledio";
+	t_list			*head;
+	long num1 = 56;
+	long num2 = 98;
+	long num3 = 90;
 	head = NULL;
-	append_node(&head, str);
-	append_node(&head, str);
-	append_node(&head, str);
-	ft_list_push_front(&head, str1);
-	ft_list_push_front(&head, str1);
-	ft_list_push_back(&head, str1);
-	ft_list_push_back(&head, str2);
-	ft_list_pop_back(&head);
-	ft_list_pop_front(&head);
+	append_node(&head,&num1);
+	append_node(&head,&num2);
+	append_node(&head,&num3);
+	append_node(&head,&num3);
+	ft_list_remove(&head, 3);
+	if (!head)
+		return (1);
 	while (head)
 	{
-		printf("%s ", (char *)head->data);
+		printf("%ld ", *(long *)head->data);
 		head = head->next;
 	}
 	printf("\n");

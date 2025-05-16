@@ -6,7 +6,7 @@
 #    By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 16:32:25 by ldurmish          #+#    #+#              #
-#    Updated: 2025/05/15 14:36:23 by ldurmish         ###   ########.fr        #
+#    Updated: 2025/05/16 17:20:02 by ldurmish         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRCS = $(VECTOR)init_ft_vector.c $(VECTOR)destroy_ft_vector.c $(VECTOR)push_back
 	   $(VECTOR)utils.c $(VECTOR)pop_ft_vector.c $(VECTOR)ft_vector_get.c \
 	   $(VECTOR)ft_vector_set.c $(VECTOR)size_ft_vector.c $(VECTOR)ft_vector_capacity.c\
 	   $(LINKED_LISTS)ft_list_create.c $(LINKED_LISTS)ft_list_push_front.c $(LINKED_LISTS)ft_list_push_back.c\
-	   $(LINKED_LISTS)ft_list_pop.c\
+	   $(LINKED_LISTS)ft_list_pop.c $(LINKED_LISTS)ft_list_get.c $(LINKED_LISTS)ft_list_remove.c\
 
 MAIN_SRCS = tests/linked_lists_main.c
 
