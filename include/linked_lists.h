@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:40:14 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/16 18:29:43 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/17 01:30:33 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -40,6 +41,15 @@ void	ft_list_pop_front(t_list **head);
 void	ft_list_pop_back(t_list **head);
 void	*ft_list_get(t_list **head, size_t index);
 void	ft_list_remove(t_list **head, size_t index);
+void	*ft_list_find(t_list **head, bool (*cmp)(void *a, void *b),
+			void *target);
+void	ft_list_destroy(t_list **head);
+void	ft_list_clear(t_list **head);
+int		ft_list_size(t_list **head);
+
+// Utils functions
+bool	cmp(void *a, void *b);
+void	del_linked_list(void *data);
 
 // Doubly linked list
 void	append_double_linked_list(t_double_list **head, void *data);
@@ -49,5 +59,10 @@ void	ft_double_list_pop_front(t_double_list **head);
 void	ft_double_list_pop_back(t_double_list **head);
 void	*ft_double_list_get(t_double_list **head, size_t index);
 void	ft_double_linked_list_remove(t_double_list **head, size_t index);
+void	ft_double_list_clear(t_double_list **head);
+void	ft_double_list_destroy(t_double_list **head);
+void	*ft_double_list_find(t_double_list **head,
+			bool (*cmp)(void *a, void *b), void *target);
+int		ft_double_list_size(t_double_list **head);
 
 #endif
