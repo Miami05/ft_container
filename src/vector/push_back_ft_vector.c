@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 20:49:06 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/12 16:01:45 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:30:59 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@ t_vector_two_d	*ft_vector_two_d_push_back(t_vector_two_d *vec,
 
 	if (!vec || !new_row)
 		return (NULL);
+	if (vec->row == 0)
+	{
+		vec->capacity = 1;
+		new_data = malloc(sizeof(t_vector *) * vec->capacity);
+		if (!new_data)
+			return (NULL);
+		vec->data = new_data;
+	}
 	if (vec->row >= vec->capacity)
 	{
-		if (vec->row == 0)
-			new_capacity = 1;
-		else
-			new_capacity = vec->capacity * 2;
+		new_capacity = vec->capacity * 2;
 		new_data = realloc(vec->data, new_capacity * sizeof(t_vector *));
 		if (!new_data)
 			return (NULL);
@@ -42,7 +47,14 @@ t_vector	*ft_vector_push_back(t_vector *vec, void *elements)
 	void			*new_array;
 	void			*new_data;
 
-	if (vec->size == vec->capacity)
+	if (vec->capacity == 0)
+	{
+		vec->capacity = 1;
+		vec->data = malloc(sizeof(t_vector *));
+		if (!vec->data)
+			return (NULL);
+	}
+	else if (vec->size == vec->capacity)
 	{
 		vec->capacity *= 2;
 		new_data = realloc(vec->data, vec->capacity * vec->element_size);

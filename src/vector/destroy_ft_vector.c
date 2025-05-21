@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 18:31:11 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/14 12:57:51 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/21 22:00:19 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,23 @@ void	ft_vector_destroy_two_d(t_vector_two_d *vec)
 
 	if (!vec || !vec->data)
 		return ;
-	if (vec->data)
+	i = 0;
+	while (i < vec->row)
 	{
-		i = 0;
-		while (i < vec->row)
+		if (vec->data[i])
 		{
-			if (vec->data[i])
+			if (vec->data[i]->data)
 			{
-				if (vec->data[i]->data)
-				{
-					free(vec->data[i]->data);
-					vec->data[i]->data = NULL;
-				}
-				free(vec->data[i]);
-				vec->data[i] = NULL;
+				free(vec->data[i]->data);
+				vec->data[i]->data = NULL;
 			}
-			i++;
+			free(vec->data[i]);
+			vec->data[i] = NULL;
 		}
-		free(vec->data);
-		vec->data = NULL;
+		i++;
 	}
+	free(vec->data);
+	vec->data = NULL;
 	vec->row = 0;
 	vec->column = 0;
 }

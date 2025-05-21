@@ -6,7 +6,7 @@
 #    By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 16:32:25 by ldurmish          #+#    #+#              #
-#    Updated: 2025/05/17 01:10:30 by ldurmish         ###   ########.fr        #
+#    Updated: 2025/05/21 18:09:26 by ldurmish         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ INCLUDE = -I include/
 SRC = src/
 VECTOR = $(SRC)vector/
 LINKED_LISTS = $(SRC)linked_lists/
+STACK = $(SRC)ft_stack/
 
 # Color codes
 RESET = \033[0m
@@ -34,9 +35,12 @@ SRCS = $(VECTOR)init_ft_vector.c $(VECTOR)destroy_ft_vector.c $(VECTOR)push_back
 	   $(VECTOR)ft_vector_set.c $(VECTOR)size_ft_vector.c $(VECTOR)ft_vector_capacity.c\
 	   $(LINKED_LISTS)ft_list_create.c $(LINKED_LISTS)ft_list_push_front.c $(LINKED_LISTS)ft_list_push_back.c\
 	   $(LINKED_LISTS)ft_list_pop.c $(LINKED_LISTS)ft_list_get.c $(LINKED_LISTS)ft_list_remove.c\
-	   $(LINKED_LISTS)ft_list_find.c $(LINKED_LISTS)ft_list_clear.c\
+	   $(LINKED_LISTS)ft_list_find.c $(LINKED_LISTS)ft_list_clear.c \
+	   $(STACK)ft_stack_create.c $(STACK)ft_stack_destroy.c $(STACK)ft_stack_is_empty.c\
+	   $(STACK)ft_stack_pop.c $(STACK)ft_stack_push.c $(STACK)ft_stack_size.c \
+	   $(STACK)ft_stack_top.c\
 
-MAIN_SRCS = tests/linked_lists_main.c
+MAIN_SRCS = tests/ft_stack_main.c
 
 # Object files
 OBJ = $(SRCS:.c=.o)
@@ -72,6 +76,10 @@ re: fclean all
 test_vector:
 	$(CC) $(CFLAGS) tests/ft_vector_main.c $(VECTOR) -o test_vector
 	@rm -f test_vector
+
+linked_list:
+	$(CC) $(CFLAGS) tests/linked_lists_main.c $(LINKED_LISTS) -o linked_list
+	@rm -f linked_list
 
 # Compiling valgrind
 valgrind: re

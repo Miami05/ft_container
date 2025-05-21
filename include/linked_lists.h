@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:40:14 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/17 01:30:33 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/21 14:01:54 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	*ft_list_find(t_list **head, bool (*cmp)(void *a, void *b),
 void	ft_list_destroy(t_list **head);
 void	ft_list_clear(t_list **head);
 int		ft_list_size(t_list **head);
+t_list	*ft_list_create(void *data);
 
 // Utils functions
 bool	cmp(void *a, void *b);
@@ -64,5 +65,6 @@ void	ft_double_list_destroy(t_double_list **head);
 void	*ft_double_list_find(t_double_list **head,
 			bool (*cmp)(void *a, void *b), void *target);
 int		ft_double_list_size(t_double_list **head);
+t_double_list	*ft_double_list_create(void *data);
 
 #endif
