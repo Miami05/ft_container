@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 20:49:06 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/21 21:30:59 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/22 00:53:32 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ t_vector	*ft_vector_push_back(t_vector *vec, void *elements)
 	void			*new_array;
 	void			*new_data;
 
+	if (!vec)
+		return (NULL);
 	if (vec->capacity == 0)
 	{
 		vec->capacity = 1;

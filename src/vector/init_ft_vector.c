@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:33:10 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/11 21:38:23 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/22 00:46:48 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_vector_two_d	*ft_vector_create_two_d(size_t column, size_t row)
 	{
 		grid->data[i] = ft_vector_create(column);
 		if (!grid->data[i])
-			return (NULL);
+			return (free_two_d(grid, i));
 		i++;
 	}
 	return (grid);

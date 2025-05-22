@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 17:45:27 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/15 10:39:34 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/22 01:19:27 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ int	main(void)
 	ft_vector_clear(vec, NULL);
 	ft_vector_destroy_two_d(vec_2d);
 	ft_vector_clear_two_d(vec_2d, NULL);
+	free(vec_2d);
 	printf("\n");
 }
