@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 18:12:09 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/21 20:37:59 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/22 12:58:49 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_stack_vec_pop(t_stack_vec *vec)
 
 void	ft_stack_vec_two_d_pop(t_stack_vec_2d *vec_2d)
 {
-	if (!vec_2d || !vec_2d->vec_2d)
+	if (!vec_2d || !vec_2d->vec_2d || !vec_2d->vec_2d->data)
 		return ;
 	pop_back_two_d(vec_2d->vec_2d);
 }

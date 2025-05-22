@@ -6,7 +6,7 @@
 /*   By: ldurmish < ldurmish@student.42wolfsburg.d  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:40:01 by ldurmish          #+#    #+#             */
-/*   Updated: 2025/05/22 01:55:34 by ldurmish         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:37:21 by ldurmish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_stack_vec_destroy(t_stack_vec *vec)
 	if (vec && vec->vec)
 	{
 		ft_vector_destroy(vec->vec);
+		free(vec->vec);
 		vec->vec = NULL;
 	}
 	free(vec);
@@ -33,6 +34,7 @@ void	ft_stack_destroy_two_d(t_stack_vec_2d *vec_2d)
 		ft_vector_destroy_two_d(vec_2d->vec_2d);
 		vec_2d->vec_2d = NULL;
 	}
+	free(vec_2d);
 }
 
 void	ft_stack_list(t_stack_list **head)
@@ -64,10 +66,10 @@ void	ft_stack_double_list(t_stack_double_list **head)
 void	free_stacks(t_stack_vec *vec, t_stack_vec_2d *vec_2d,
 	t_stack_list **head, t_stack_double_list **double_list)
 {
+	if (vec && vec->vec && !vec_2d)
+		ft_stack_vec_destroy(vec);
 	if (vec_2d)
 		ft_stack_destroy_two_d(vec_2d);
-	if (vec && vec->vec)
-		ft_stack_vec_destroy(vec);
 	if (head && *head)
 		ft_stack_list(head);
 	if (double_list && *double_list)
